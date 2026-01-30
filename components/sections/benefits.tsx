@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { MotionSection } from "@/components/ui/motion-section";
 import { CheckCircle2 } from "lucide-react";
 
 const benefits = [
@@ -16,35 +14,28 @@ export function Benefits() {
         <section className="bg-zinc-50 py-24">
             <div className="container mx-auto px-4">
                 <div className="grid gap-12 md:grid-cols-2 md:items-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                    >
+                    <MotionSection>
                         <h2 className="text-3xl font-bold tracking-tight text-zinc-950 md:text-4xl">
                             Desenvolvido para alta performance
                         </h2>
                         <p className="mt-4 text-lg text-zinc-600">
                             Não é apenas um site bonito. É uma ferramenta de vendas projetada para transformar visitantes em contatos reais.
                         </p>
-                    </motion.div>
+                    </MotionSection>
 
                     <div className="space-y-4">
                         {benefits.map((benefit, index) => (
-                            <motion.div
+                            <MotionSection
                                 key={index}
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.4, delay: index * 0.1 }}
-                                className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/50 transition-colors"
+                                delay={index * 0.1}
                             >
-                                <div className="flex-shrink-0">
-                                    <CheckCircle2 className="h-6 w-6 text-indigo-600" />
+                                <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/50 transition-colors">
+                                    <div className="flex-shrink-0">
+                                        <CheckCircle2 className="h-6 w-6 text-indigo-600" />
+                                    </div>
+                                    <span className="text-lg font-medium text-zinc-800">{benefit}</span>
                                 </div>
-                                <span className="text-lg font-medium text-zinc-800">{benefit}</span>
-                            </motion.div>
+                            </MotionSection>
                         ))}
                     </div>
                 </div>

@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { MotionSection } from "@/components/ui/motion-section";
 
 const steps = [
     {
@@ -39,12 +37,9 @@ export function Timeline() {
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative z-10">
                         {steps.map((item, index) => (
-                            <motion.div
+                            <MotionSection
                                 key={item.step}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.15 }}
+                                delay={index * 0.15}
                                 className="flex flex-col md:items-center md:text-center bg-zinc-50 md:bg-transparent p-4 md:p-0 rounded-xl relative z-10"
                             >
                                 <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-zinc-900 to-zinc-700 text-white font-bold text-lg md:text-xl mb-4 shadow-lg shadow-zinc-500/20 mx-auto md:mx-auto border-4 border-white">
@@ -52,7 +47,7 @@ export function Timeline() {
                                 </div>
                                 <h3 className="text-xl font-semibold text-zinc-900 mb-2">{item.title}</h3>
                                 <p className="text-zinc-600 text-sm md:text-base max-w-xs mx-auto">{item.desc}</p>
-                            </motion.div>
+                            </MotionSection>
                         ))}
                     </div>
                 </div>

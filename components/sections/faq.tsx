@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { MotionSection } from "@/components/ui/motion-section";
 import {
     Accordion,
     AccordionContent,
@@ -55,11 +55,7 @@ export function FAQ() {
             </Accordion>
 
             {/* CTA Final */}
-            <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+            <MotionSection
                 className="mt-20 text-center space-y-6 bg-gradient-to-br from-zinc-900 via-zinc-950 to-black rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl"
             >
                 {/* Abstract glow */}
@@ -82,7 +78,7 @@ export function FAQ() {
                         </Link>
                     </Button>
                 </div>
-            </motion.div>
+            </MotionSection>
         </section>
     );
 }
