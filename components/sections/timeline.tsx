@@ -45,9 +45,9 @@ export function Timeline() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                                className="flex flex-col md:items-center md:text-center bg-zinc-50 md:bg-transparent p-4 md:p-0 rounded-xl"
+                                className="flex flex-col md:items-center md:text-center bg-zinc-50 md:bg-transparent p-4 md:p-0 rounded-xl relative z-10"
                             >
-                                <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-zinc-950 text-white font-bold text-lg md:text-xl mb-4 shadow-sm mx-auto md:mx-auto">
+                                <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-zinc-900 to-zinc-700 text-white font-bold text-lg md:text-xl mb-4 shadow-lg shadow-zinc-500/20 mx-auto md:mx-auto border-4 border-white">
                                     {item.step}
                                 </div>
                                 <h3 className="text-xl font-semibold text-zinc-900 mb-2">{item.title}</h3>

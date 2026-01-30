@@ -60,16 +60,18 @@ export function Pricing() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
                             <Card className={cn(
-                                "relative flex h-full flex-col p-8 transition-all hover:border-zinc-300",
-                                plan.popular && "border-zinc-950 shadow-md scale-105 z-10"
+                                "relative flex h-full flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
+                                plan.popular
+                                    ? "border-indigo-600 shadow-indigo-500/10 scale-105 z-10 bg-white ring-1 ring-indigo-100"
+                                    : "hover:border-zinc-300"
                             )}>
                                 {plan.popular && (
-                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-zinc-950 px-3 py-1 text-sm font-medium text-white">
+                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo-600 to-blue-600 px-4 py-1 text-sm font-medium text-white shadow-lg shadow-indigo-500/20">
                                         Mais escolhido
                                     </div>
                                 )}
 
-                                <h3 className="text-xl font-semibold text-zinc-900">{plan.name}</h3>
+                                <h3 className={cn("text-xl font-semibold", plan.popular ? "text-indigo-600" : "text-zinc-900")}>{plan.name}</h3>
                                 <div className="mt-4 mb-8">
                                     <span className="text-4xl font-bold text-zinc-950">R$ {plan.price}</span>
                                     <span className="text-zinc-500">/mês</span>
@@ -79,13 +81,17 @@ export function Pricing() {
                                 <ul className="space-y-4 mb-8 flex-1">
                                     {plan.features.map((feature) => (
                                         <li key={feature} className="flex items-center gap-3">
-                                            <Check className="h-5 w-5 text-zinc-950 shrink-0" />
+                                            <Check className={cn("h-5 w-5 shrink-0", plan.popular ? "text-indigo-600" : "text-zinc-900")} />
                                             <span className="text-zinc-600">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
 
-                                <Button asChild className={cn("w-full", !plan.popular && "bg-zinc-100 text-zinc-900 hover:bg-zinc-200")}>
+                                <Button asChild className={cn(
+                                    "w-full transition-all duration-300",
+                                    !plan.popular && "bg-zinc-100 text-zinc-900 hover:bg-zinc-200 border border-zinc-200",
+                                    plan.popular && "bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white shadow-lg shadow-indigo-500/25"
+                                )}>
                                     <Link href="https://wa.me/message/3CPMOVVNIKSDG1" target="_blank">
                                         Selecionar {plan.name}
                                     </Link>

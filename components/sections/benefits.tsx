@@ -38,9 +38,11 @@ export function Benefits() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                                className="flex items-center gap-3"
+                                className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/50 transition-colors"
                             >
-                                <CheckCircle2 className="h-6 w-6 text-zinc-900" />
+                                <div className="flex-shrink-0">
+                                    <CheckCircle2 className="h-6 w-6 text-indigo-600" />
+                                </div>
                                 <span className="text-lg font-medium text-zinc-800">{benefit}</span>
                             </motion.div>
                         ))}

@@ -43,11 +43,11 @@ export function FAQ() {
 
             <Accordion type="single" collapsible className="w-full">
                 {faqs.map((faq, index) => (
-                    <AccordionItem key={index} value={`item-${index}`}>
-                        <AccordionTrigger className="text-left text-lg font-medium text-zinc-900">
+                    <AccordionItem key={index} value={`item-${index}`} className="border-b border-zinc-100 data-[state=open]:bg-zinc-50/50 px-4 rounded-lg transition-colors overflow-hidden">
+                        <AccordionTrigger className="text-left text-lg font-medium text-zinc-900 hover:text-indigo-600 transition-colors py-6">
                             {faq.question}
                         </AccordionTrigger>
-                        <AccordionContent className="text-zinc-600 text-base leading-relaxed">
+                        <AccordionContent className="text-zinc-600 text-base leading-relaxed pb-6 pl-2 border-l-2 border-indigo-500/20">
                             {faq.answer}
                         </AccordionContent>
                     </AccordionItem>
@@ -60,20 +60,23 @@ export function FAQ() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="mt-20 text-center space-y-6 bg-zinc-950 rounded-2xl p-8 md:p-12"
+                className="mt-20 text-center space-y-6 bg-gradient-to-br from-zinc-900 via-zinc-950 to-black rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl"
             >
-                <h2 className="text-3xl font-bold text-white">Quer ver funcionando ao vivo?</h2>
-                <p className="text-zinc-400 text-lg max-w-xl mx-auto">
+                {/* Abstract glow */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+
+                <h2 className="text-3xl font-bold text-white relative z-10">Quer ver funcionando ao vivo?</h2>
+                <p className="text-zinc-400 text-lg max-w-xl mx-auto relative z-10">
                     Te mostro o cadastro de imóvel no painel e a experiência do cliente em menos de 10 minutos.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                    <Button asChild size="lg" className="bg-white text-zinc-950 hover:bg-zinc-200">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 relative z-10">
+                    <Button asChild size="lg" className="bg-white text-zinc-950 hover:bg-zinc-100 h-14 px-8 text-lg font-semibold shadow-lg shadow-white/10">
                         <Link href="https://wa.me/message/3CPMOVVNIKSDG1" target="_blank">
-                            <MessageCircle className="mr-2 h-5 w-5" />
+                            <MessageCircle className="mr-2 h-5 w-5 text-green-600" />
                             Chamar no WhatsApp
                         </Link>
                     </Button>
-                    <Button asChild variant="outline" size="lg" className="bg-transparent text-white border-zinc-700 hover:bg-zinc-900 hover:text-white">
+                    <Button asChild variant="outline" size="lg" className="bg-transparent text-white border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 h-14 px-8 text-lg">
                         <Link href="#demo">
                             Ver site novamente
                         </Link>
