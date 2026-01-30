@@ -7,9 +7,9 @@ import Link from "next/link";
 
 export function Hero() {
     return (
-        <section className="relative flex flex-col items-center justify-center px-4 pt-32 pb-20 text-center md:pt-40 md:pb-28 overflow-hidden">
-            {/* Subtle radial gradient background */}
-            <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#EFF6FF] via-white to-white opacity-70"></div>
+        <section className="relative flex flex-col items-center justify-center px-4 pt-32 pb-20 text-center md:pt-40 md:pb-28 overflow-hidden bg-[radial-gradient(ellipse_at_top,_rgba(79,70,229,0.18)_0%,_rgba(6,182,212,0.10)_30%,_rgba(255,255,255,1)_70%)]">
+            {/* Decorative Layer */}
+            <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/10 via-cyan-400/5 to-transparent blur-3xl pointer-events-none"></div>
 
             <div className="max-w-4xl space-y-8 relative z-10">
                 {/* Headline Part 1 */}
