@@ -66,16 +66,19 @@ export function FAQ() {
                     Te mostro o cadastro de imóvel no painel e a experiência do cliente em menos de 10 minutos.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 relative z-10">
-                    <Button asChild size="lg" className="bg-white text-zinc-950 hover:bg-zinc-100 h-14 px-8 text-lg font-semibold shadow-lg shadow-white/10">
+                    <Button asChild size="lg" className="bg-white text-zinc-950 hover:bg-zinc-100 h-14 px-8 text-lg font-semibold shadow-lg shadow-white/10 hover:scale-[1.03] active:scale-[0.97] transition-all">
                         <Link href="https://wa.me/message/3CPMOVVNIKSDG1" target="_blank">
                             <MessageCircle className="mr-2 h-5 w-5 text-green-600" />
                             Chamar no WhatsApp
                         </Link>
                     </Button>
-                    <Button asChild variant="outline" size="lg" className="bg-transparent text-white border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 h-14 px-8 text-lg">
-                        <Link href="#demo">
-                            Ver site novamente
-                        </Link>
+                    <Button
+                        variant="outline"
+                        size="lg"
+                        className="bg-transparent text-white border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 h-14 px-8 text-lg hover:scale-[1.03] active:scale-[0.97] transition-all"
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    >
+                        Ver site novamente
                     </Button>
                 </div>
             </MotionSection>

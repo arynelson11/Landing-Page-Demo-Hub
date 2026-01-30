@@ -27,7 +27,7 @@ export function Demo() {
                 <div className="grid gap-8 md:grid-cols-2 lg:gap-12 max-w-5xl mx-auto">
                     {/* Card 1: Site Público */}
                     <MotionSection delay={0.1} className="h-full">
-                        <Card className="flex h-full flex-col justify-between p-8 sm:p-10 transition-all duration-300 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 hover:ring-1 hover:ring-blue-100 group bg-white/50 backdrop-blur-sm">
+                        <Card className="flex h-full flex-col justify-between p-8 sm:p-10 transition-all duration-300 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-[6px] hover:ring-1 hover:ring-blue-100 group bg-white/50 backdrop-blur-sm">
                             <div className="space-y-4">
                                 <div className="flex items-center gap-3">
                                     <div className="h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 group-hover:scale-110 transition-all duration-300">
@@ -40,7 +40,7 @@ export function Demo() {
                                 </p>
                             </div>
                             <div className="mt-8">
-                                <Button asChild className="w-full bg-white border border-blue-100 text-blue-600 hover:bg-blue-50 hover:border-blue-200 shadow-sm transition-all hover:shadow-md" variant="secondary">
+                                <Button asChild className="w-full bg-white border border-blue-100 text-blue-600 hover:bg-blue-50 hover:border-blue-200 shadow-sm transition-all hover:shadow-md hover:scale-[1.03] active:scale-[0.97]" variant="secondary">
                                     <Link href="https://lumina-estates-nine.vercel.app/" target="_blank">
                                         Abrir site
                                         <ExternalLink className="ml-2 h-4 w-4" />
@@ -52,7 +52,7 @@ export function Demo() {
 
                     {/* Card 2: Painel Admin */}
                     <MotionSection delay={0.2} className="h-full">
-                        <Card className="flex h-full flex-col justify-between p-8 sm:p-10 border-zinc-200 bg-zinc-50/50 transition-all duration-300 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-500/5 hover:-translate-y-1 hover:ring-1 hover:ring-indigo-100 group">
+                        <Card className="flex h-full flex-col justify-between p-8 sm:p-10 border-zinc-200 bg-zinc-50/50 transition-all duration-300 hover:border-indigo-200 hover:shadow-2xl hover:shadow-indigo-500/10 hover:-translate-y-[6px] hover:ring-1 hover:ring-indigo-100 group">
                             <div className="space-y-4">
                                 <div className="flex items-center gap-3">
                                     <div className="h-10 w-10 rounded-full bg-zinc-200 flex items-center justify-center group-hover:bg-indigo-100 group-hover:scale-110 transition-all duration-300">
