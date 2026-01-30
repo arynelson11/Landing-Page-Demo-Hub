@@ -1,0 +1,85 @@
+"use client";
+
+import { motion } from "framer-motion";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { MessageCircle } from "lucide-react";
+import Link from "next/link";
+
+const faqs = [
+    {
+        question: "Eu já uso o Instagram, preciso de site?",
+        answer: "O Instagram é excelente para conexão, mas o site é sua ferramenta de conversão e autoridade. É o seu terreno próprio na internet, onde você não depende do algoritmo para fechar negócios.",
+    },
+    {
+        question: "Já tive site e não deu resultado. Por que esse seria diferente?",
+        answer: "Muitos sites antigos são lentos, feios e difíceis de navegar. Nossa plataforma foi desenhada focando na experiência do usuário e em SEO, para garantir que quem visita, entra em contato.",
+    },
+    {
+        question: "Quanto tempo para colocar no ar?",
+        answer: "Após o alinhamento inicial e envio dos materiais da marca, conseguimos entregar seu site pronto para venda em até 7 dias úteis.",
+    },
+    {
+        question: "Preciso ter muitos imóveis para começar?",
+        answer: "Não. A plataforma é escalável. Você pode começar com poucos imóveis exclusivos e crescer sua carteira aos poucos. O design valoriza o que você tem.",
+    },
+    {
+        question: "Como funciona o painel administrativo?",
+        answer: "É extremamente simples. Se você sabe usar WhatsApp ou Instagram, saberá usar o painel. Cadastrar um imóvel leva menos de 5 minutos.",
+    },
+];
+
+export function FAQ() {
+    return (
+        <section className="py-24 max-w-3xl mx-auto px-4">
+            <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold tracking-tight text-zinc-950">Dúvidas Frequentes</h2>
+            </div>
+
+            <Accordion type="single" collapsible className="w-full">
+                {faqs.map((faq, index) => (
+                    <AccordionItem key={index} value={`item-${index}`}>
+                        <AccordionTrigger className="text-left text-lg font-medium text-zinc-900">
+                            {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-zinc-600 text-base leading-relaxed">
+                            {faq.answer}
+                        </AccordionContent>
+                    </AccordionItem>
+                ))}
+            </Accordion>
+
+            {/* CTA Final */}
+            <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="mt-20 text-center space-y-6 bg-zinc-950 rounded-2xl p-8 md:p-12"
+            >
+                <h2 className="text-3xl font-bold text-white">Quer ver funcionando ao vivo?</h2>
+                <p className="text-zinc-400 text-lg max-w-xl mx-auto">
+                    Te mostro o cadastro de imóvel no painel e a experiência do cliente em menos de 10 minutos.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                    <Button asChild size="lg" className="bg-white text-zinc-950 hover:bg-zinc-200">
+                        <Link href="https://wa.me/message/3CPMOVVNIKSDG1" target="_blank">
+                            <MessageCircle className="mr-2 h-5 w-5" />
+                            Chamar no WhatsApp
+                        </Link>
+                    </Button>
+                    <Button asChild variant="outline" size="lg" className="bg-transparent text-white border-zinc-700 hover:bg-zinc-900 hover:text-white">
+                        <Link href="#demo">
+                            Ver site novamente
+                        </Link>
+                    </Button>
+                </div>
+            </motion.div>
+        </section>
+    );
+}
