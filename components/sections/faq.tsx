@@ -72,13 +72,10 @@ export function FAQ() {
                             Chamar no WhatsApp
                         </Link>
                     </Button>
-                    <Button
-                        variant="outline"
-                        size="lg"
-                        className="bg-transparent text-white border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 h-14 px-8 text-lg hover:scale-[1.03] active:scale-[0.97] transition-all"
-                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    >
-                        Ver site novamente
+                    <Button asChild variant="outline" size="lg" className="bg-transparent text-white border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 h-14 px-8 text-lg hover:scale-[1.03] active:scale-[0.97] transition-all">
+                        <Link href="#demo">
+                            Ver site novamente
+                        </Link>
                     </Button>
                 </div>
             </MotionSection>

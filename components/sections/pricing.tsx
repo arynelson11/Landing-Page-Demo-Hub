@@ -60,7 +60,7 @@ export function Pricing() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
                             <Card className={cn(
-                                "relative flex h-full flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
+                                "relative flex h-full flex-col p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl",
                                 plan.popular
                                     ? "border-indigo-600 shadow-indigo-500/10 scale-105 z-10 bg-white ring-1 ring-indigo-100"
                                     : "hover:border-zinc-300"

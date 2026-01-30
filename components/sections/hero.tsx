@@ -9,7 +9,7 @@ export function Hero() {
     return (
         <section className="relative flex flex-col items-center justify-center px-4 pt-32 pb-20 text-center md:pt-40 md:pb-28 overflow-hidden">
             {/* Subtle radial gradient background */}
-            <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100 via-white to-white opacity-70"></div>
+            <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#EFF6FF] via-white to-white opacity-70"></div>
 
             <div className="max-w-4xl space-y-8 relative z-10">
                 {/* Headline Part 1 */}
@@ -59,7 +59,7 @@ export function Hero() {
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                         className="rounded-md"
                     >
-                        <Button asChild size="lg" className="h-14 px-8 text-lg bg-[#4F46E5] hover:bg-[#4338ca] shadow-lg shadow-indigo-500/25 transition-all hover:scale-[1.03] active:scale-[0.97] group">
+                        <Button asChild size="lg" className="h-14 px-8 text-lg bg-[#4F46E5] hover:bg-[#4338ca] shadow-lg shadow-indigo-500/25 transition-all hover:scale-[1.04] active:scale-[0.98] group">
                             <Link href="#demo">
                                 Ver demonstração
                                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -67,7 +67,7 @@ export function Hero() {
                         </Button>
                     </motion.div>
 
-                    <Button asChild variant="outline" size="lg" className="h-14 px-8 text-lg border-zinc-200 text-zinc-700 hover:bg-zinc-50 hover:text-[#06B6D4] hover:border-cyan-200 transition-all hover:scale-[1.03] active:scale-[0.97]">
+                    <Button asChild variant="outline" size="lg" className="h-14 px-8 text-lg border-zinc-200 text-zinc-700 hover:bg-zinc-50 hover:text-[#06B6D4] hover:border-cyan-200 transition-all hover:scale-[1.04] active:scale-[0.98]">
                         <Link href="https://wa.me/message/3CPMOVVNIKSDG1" target="_blank">
                             <MessageCircle className="mr-2 h-5 w-5 text-green-600" />
                             Agendar apresentação

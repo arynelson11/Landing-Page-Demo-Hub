@@ -10,7 +10,7 @@ export function LaptopMock() {
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % 3);
-        }, 8000); // 8 seconds per slide for slower, premium feel
+        }, 4000); // 4 seconds per slide for dynamic flow
         return () => clearInterval(timer);
     }, []);
 
